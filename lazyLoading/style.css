@@ -1,0 +1,81 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}   
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* the overlay class depicts the viewport and the changes to the viewport */
+.overlay {
+    background-color: darkgrey;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* top: 100px;
+    bottom: 100px;
+    left: 100px;
+    right: 100px; */
+    opacity: 0.6;
+    position: fixed;
+    z-index: 2;
+    display: none;
+  }
+
+.inner-container {
+    background-color: #000;
+    height: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.inner-container-text {
+    color: #fff;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+}
+
+.image-text-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-text {
+    color: #000;
+    font-size: 2rem;
+    text-transform: uppercase;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    /* visibility: hidden; */
+    transition: visibility 150ms ease-in,
+                transform 200ms ease-in;
+}
+
+
+.image.slide-in-left,
+.image.slide-in-right {
+    transform: translateX(0);
+}
+
+.image.slide-in-left.visible {
+    transform: translateX(100px);
+}
+
+.image.slide-in-right.visible {
+    visibility: visible;
+    transform: translateX(-100px)
+}
